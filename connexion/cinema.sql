@@ -139,7 +139,7 @@ CREATE TABLE `historique_membre` (
   `id_membre` int(11) NOT NULL,
   `id_film` int(11) NOT NULL,
   `date` datetime NOT NULL,
-  'avis' VARCHAR(255),
+  `avis` VARCHAR(255),
   KEY(`id_membre`),
   KEY(`id_film`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -4338,7 +4338,7 @@ INSERT INTO fiche_personne (`id_perso`, `nom`, `prenom`, `cpostal`, `ville`, `ad
 ('59','renty','mario-charles','31330','ST CEZERT',' ','1950-09-15','renty.mario-charles@machin.com');
 
 TRUNCATE TABLE historique_membre;
-INSERT INTO historique_membre (`id_membre`, `id_film`, `date`,'avis') VALUES
+INSERT INTO historique_membre (`id_membre`, `id_film`, `date`) VALUES
 ('1','2117','2004-08-07'),
 ('1','2154','2004-09-12'),
 ('1','2144','2004-08-24'),

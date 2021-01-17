@@ -79,5 +79,3 @@ if (isset($_GET['id'])) {
         $resultat['abonnement'] = $resultQuery[0]['nom_abo'];
     }
 }
-
-?>

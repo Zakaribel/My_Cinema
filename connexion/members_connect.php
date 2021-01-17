@@ -1,13 +1,6 @@
 <?php include 'pdo_connect.php';
 
 
-$nom = "";
-$prenom = "";
-$date_de_naissance = "";
-$email = "";
-$adresse = "";
-$code_postal = "";
-$ville = "";
 $array_id = [];
 $array_nom = [];
 $array_prenom = [];
@@ -16,6 +9,7 @@ $array_email = [];
 $array_adresse = [];
 $array_code_postal = [];
 $array_ville = [];
+
 if (isset($_POST['find'])) {
 
 
@@ -23,7 +17,7 @@ if (isset($_POST['find'])) {
     $keyword = $_POST['keyword'];
     $sqlquery = "SELECT * FROM fiche_personne WHERE nom  LIKE '$keyword' OR prenom LIKE'$keyword'";
     $res = $conn->prepare($sqlquery);
-    
+
 
 
 
@@ -41,8 +35,7 @@ if (isset($_POST['find'])) {
             array_push($array_ville, $row['ville']);
         }
     } else {
-        $nom = "";
-        $prenom = "";
+
         echo "Désolé nous n'avons trouvé aucun résultat pour cette recherche";
     }
 }

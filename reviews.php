@@ -1,18 +1,4 @@
-<?php
-
-include 'film_connect.php';
-include 'pdo_connect.php';
-
-$sql = "SELECT * FROM `historique_membre` WHERE id_film =" . $_GET['film'] . " AND avis is not null";
-$res = $conn->query($sql);
-$URI = $_SERVER['REQUEST_URI'];
-
-if(isset($_POST['add_review'])){
-    $updateSQL = $conn->query('UPDATE historique_membre SET avis = "' . $_POST['avis'] . '" where id_membre = ' . $_GET['user'] . ' and id_film = ' . $_GET['film']);
-    header('location:'.$URI);
-}
-
-?>
+<?php include 'connexion/reviews_connect.php ' ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -32,11 +18,11 @@ if(isset($_POST['add_review'])){
 
 
     <div class="container">
-    <form method="POST">
-        
-        Ajoutez un avis à ce film : <input type="text" name="avis"> <input type="submit" name="add_review" value="Ajouter">
-        
-    </form>
+        <form method="POST">
+
+            Ajoutez un avis à ce film : <input type="text" name="avis"> <input type="submit" name="add_review" value="Ajouter">
+
+        </form>
     </div>
 
 
@@ -47,15 +33,15 @@ if(isset($_POST['add_review'])){
         <?php
 
 
-        if($res->rowCount() > 0) {
+        if ($res->rowCount() > 0) {
             $res = $res->fetchAll();
-            
+
             for ($i = 0; $i < count($res); $i++) {
 
                 echo "<p>" .
-    
+
                     $res[$i]['avis'];
-    
+
                 "</p>";
             }
         } else {

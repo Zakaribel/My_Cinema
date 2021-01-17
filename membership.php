@@ -1,5 +1,5 @@
 <?php
-include 'membership_connect.php';
+include 'connexion/membership_connect.php';
 ?>
 
 
@@ -59,7 +59,7 @@ include 'membership_connect.php';
                     <option value="0">SUPPRIMER</option>
                 </select>
                 <br>
-                <input type='submit' name="update" class="btn-primary" value="Modifier" />
+                <input type='submit' name="update" class="btn-primary" value="Appliquer" />
                 <input type='submit' name="historique" class="btn-primary" value="Voir historique des films vus par le membre" />
             </div>
         </form>
@@ -78,7 +78,7 @@ include 'membership_connect.php';
 
 
                     for ($i = 0; $i < count($resAvis); $i++) {
-                        echo "<li class='list-group-item list-group-item-action list-group-item-success'><b>" . $resAvis[$i]['titre'] . "</b><a style='float: right;' href='avis.php?user=" . $_GET['id'] . "&film=" . $resAvis[$i]['id_film'] . "'>Afficher les avis</a></li>";
+                        echo "<li class='list-group-item list-group-item-action list-group-item-success'><b>" . $resAvis[$i]['titre'] . "</b><a style='float: right;' href='reviews.php?user=" . $_GET['id'] . "&film=" . $resAvis[$i]['id_film'] . "'>Afficher les avis</a></li>";
                     }
                     echo "</ul>";
                 }
