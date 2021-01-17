@@ -45,7 +45,7 @@
                 "</p>";
             }
         } else {
-            echo "y'a rien fréro ^^";
+            echo "Aucun avis pour le moment...";
         }
 
         ?>

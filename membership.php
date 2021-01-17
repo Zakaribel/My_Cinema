@@ -28,7 +28,7 @@ include 'connexion/membership_connect.php';
         <?php
         if (isset($_GET['success'])) {
             echo "<div class='alert alert-success' role='alert'>
-            Abonnement modifié aves succès le sanng
+            Abonnement modifié aves succès 
         </div>";
         }
         ?>
@@ -43,11 +43,11 @@ include 'connexion/membership_connect.php';
                 <input type="email" disabled class="form-control" id="prenom" aria-describedby="emailHelp" value=<?= $resultat['prenom'] ?>>
             </div>
             <div class="form-group">
-                <label for="nom_abo">Abonnement actuel ^^</label>
+                <label for="nom_abo">Abonnement actuel </label>
                 <input type="email" disabled class="form-control" id="nom_abo" aria-describedby="emailHelp" value=<?= $resultat['abonnement'] ?>>
             </div>
             <div class="form-group">
-                <label for="abonnements">Changer l'abonnement mdrr</label>
+                <label for="abonnements">Changer l'abonnement</label>
                 <select name="new_abo" class="form-control" id="abonnements">
 
                     <?php
